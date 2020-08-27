@@ -15,14 +15,13 @@
                         Wonder matter now can estate esteem assure fat roused. Am performed on existence as discourse is. Pleasure friendly at marriage blessing or
                     </p> -->
                     <div class="md:mt-0 text-orange-700 font-semibold text-xl mb-2">
-                        <a class="text-orange-700 hover:text-orange-400" href="#">Read More</a>
+                        <a class="text-orange-700 hover:text-orange-400" href="#"><router-link :to="'/album/detail/'+albums.id">Read More</router-link></a>
                     </div>
                     </div>
                 </div>
  
             </div> 
         </paginate> 
-          <paginate-links for="albums" :show-step-links="true"></paginate-links>
   <paginate-links for="albums" :limit="2" :show-step-links="true"></paginate-links>
   <paginate-links for="albums" :simple="{
         next: 'Next »',
@@ -34,7 +33,7 @@
 </template>
 
 <script>
-import albums from '../data/albums'
+import albums from '../../data/albums'
 export default {
   name: "AlbumPage",
   data(){

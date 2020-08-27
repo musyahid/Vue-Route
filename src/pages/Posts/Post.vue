@@ -2,7 +2,8 @@
   <div>
     <h2>Post page</h2>
      <div class="row-span-2 gap-8">
-            <div v-for="(posts, i) in list" :key="i" class="w-full md:w-4/7 py-3">
+          <paginate name="posts" :list="list" :per="3" >
+            <div v-for="(posts, i) in paginated('posts')" :key="i" class="w-full md:w-4/7 py-3">
                 <!-- post 1 -->
                 <div class="rounded w-full  flex flex-col md:flex-row mb-10">
                     <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60" class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0" />
@@ -14,23 +15,29 @@
                         {{posts.body.substring(0,120)+"...." }}
                     </p>
                     <div class="md:mt-0 text-orange-700 font-semibold text-xl mb-2">
-                        <a class="text-orange-700 hover:text-orange-400" href="#"><router-link :to="'/user/'+posts.id">Read More</router-link></a>
+                        <a class="text-orange-700 hover:text-orange-400" href="#"><router-link :to="'/post/detail/'+posts.id">Read More</router-link></a>
                     </div>
                     </div>
                 </div>
-            </div>        
+            </div>  
+          </paginate>
+  <paginate-links for="posts" :limit="2" :show-step-links="true"></paginate-links>
+  <paginate-links for="posts" :simple="{
+        next: 'Next »',
+        prev: '« Back'
+      }"></paginate-links>     
         </div>  
   </div>
 </template>
 
 <script>
-import posts from '../data/posts'
+import posts from '../../data/posts'
 export default {
   name: "PostPage",
   data(){
       return {
           list: [],
-          messsage: 'Halo'
+          paginate: ['posts'],
       }
   },
   created() {
