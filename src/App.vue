@@ -35,9 +35,10 @@
                         Sidbar Links
                     </div>
                     <ul>
-                        <li><a class="text-orange-700 hover:text-white" href="#">POST</a></li>
-                        <li><a class="text-orange-700 hover:text-white"  href="#">PHOTO</a></li>
-                        <li><a class="text-orange-700 hover:text-white"  href="#">ALBUM</a></li>
+                        <li><a class="text-orange-700 hover:text-white" href="#"><router-link to="/">HOME</router-link></a></li>
+                        <li><a class="text-orange-700 hover:text-white" href="#"><router-link to="/post">POST</router-link></a></li>
+                        <li><a class="text-orange-700 hover:text-white"  href="#"><router-link to="/photo">PHOTO</router-link></a></li>
+                        <li><a class="text-orange-700 hover:text-white"  href="#"><router-link to="/album">ALBUM</router-link></a></li>
                     </ul>
                 </div>
             </div>

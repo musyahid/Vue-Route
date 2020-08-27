@@ -13,10 +13,8 @@
                 <div class="badge">
                     <span>25 mins</span>
                 </div>
-            </div>
-            
+            </div>  
         </div>
-        
   </div>
 </template>
 
@@ -32,6 +30,7 @@ export default {
   },
   created () {
     console.log("album created");
+  
     // this.list = albums
     //   console.log("m", { m: this.messsage, albums });
   },

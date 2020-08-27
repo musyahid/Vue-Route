@@ -12,7 +12,7 @@
                        {{photos.title}}
                     </div>
                     <div class="md:mt-0 text-orange-700 font-semibold text-xl mb-2">
-                        <a class="text-orange-700 hover:text-orange-400" href="#"><router-link :to="'/user/'+photos.id">Read More</router-link></a>
+                        <a class="text-orange-700 hover:text-orange-400" href="#"><router-link :to="'/photo/detail/'+photos.id">Read More</router-link></a>
                     </div>
                     </div>
                 </div>
