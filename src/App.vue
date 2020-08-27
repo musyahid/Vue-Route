@@ -1,7 +1,6 @@
 <template>
   <div id="app">
 
-
         <div class="px-16">
         <div>
             <nav>
@@ -30,17 +29,7 @@
         <div class="grid grid-rows-3 grid-flow-col gap-4 mt-2">
           <router-view></router-view>
             <div class="bg-gray-400 row-span-3 col-span-10">
-                <div class="py-8 px-5">
-                    <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-                        Sidbar Links
-                    </div>
-                    <ul>
-                        <li><a class="text-orange-700 hover:text-white" href="#"><router-link to="/">HOME</router-link></a></li>
-                        <li><a class="text-orange-700 hover:text-white" href="#"><router-link to="/post">POST</router-link></a></li>
-                        <li><a class="text-orange-700 hover:text-white"  href="#"><router-link to="/photo">PHOTO</router-link></a></li>
-                        <li><a class="text-orange-700 hover:text-white"  href="#"><router-link to="/album">ALBUM</router-link></a></li>
-                    </ul>
-                </div>
+                <router-view name="sidebar-widget"></router-view>
             </div>
         </div>
     </div>

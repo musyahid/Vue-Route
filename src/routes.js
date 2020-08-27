@@ -1,19 +1,17 @@
-// import Home from './pages/Home.vue'
-// import AlbumIndex from "./pages/Albums/Index";
-// import PhotoIndex from "./pages/Photos/Index";
-// import PostIndex from "./pages/Posts/Index";
-// import Album from './pages/Albums/Album.vue'
-// import Photo from './pages/Photos/Photo.vue'
-// import Post from './pages/Posts/Post.vue'
-// import AlbumDetails from './pages/Albums/AlbumDetails.vue'
-// import PhotoDetails from './pages/Photos/PhotoDetails.vue'
-// import PostsDetails from './pages/Posts/PostDetails.vue'
 
 const routes = [
-    { path: '/', component: () => import (/* webpackChunkName: "Home */  './pages/Home.vue') },
+    { path: '/', 
+      components: {
+        default:() => import (/* webpackChunkName: "Home */  './pages/Home.vue'),
+        'sidebar-widget' : () => import('./pages/sidebar/SidebarHome') 
+      } 
+    },
     { 
       path: '/album', 
-      component: () => import (/* webpackChunkName: "Album Index*/ './pages/Albums/Index'), 
+      components: {
+        default: () => import (/* webpackChunkName: "Album Index*/ './pages/Albums/Index'), 
+        'sidebar-widget' : () => import('./pages/sidebar/SidebarAlbum') 
+      },
       name: "albumIndex",
         children: [
           {
@@ -30,7 +28,10 @@ const routes = [
       },
     { 
       path: '/photo', 
-        component: () => import (/* webpackChunkName: "Photo Index" */ "./pages/Photos/Index"),
+        components: {
+          default: () => import (/* webpackChunkName: "Photo Index" */ "./pages/Photos/Index"),
+          'sidebar-widget' : () => import('./pages/sidebar/SidebarPhotos')
+        },
         name: "photoIndex",
         children: [
           {
@@ -47,8 +48,11 @@ const routes = [
     },
     { 
       path: '/post', 
-        component: () => import (/* webpackChunkName: "Post Index" */ "./pages/Posts/Index"),
-        name: 'postIndex',
+        components: {
+          default:() => import (/* webpackChunkName: "Home */  './pages/Posts/Index'),
+          'sidebar-widget' : () => import('./pages/sidebar/SidebarPosts') 
+        },
+        meta: { requiresAuth: true },
         children: [
           {
             path: "",

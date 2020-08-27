@@ -34,8 +34,8 @@
                         <a class="text-orange-700 hover:text-orange-400" href="#">Read More</a>
                     </div>
                     </div>
-                </div>
-            </div>         
+                </div>   
+            </div> 
         </div>  
   </div>
 </template>
