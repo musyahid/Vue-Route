@@ -1,32 +1,39 @@
 <template>
   <div>
-    <h1>sidebar post</h1>
         <div class="py-8 px-5">
         <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
-            Sidbar Links
+            LAST POST
         </div>
-        <ul>
-            <li><a class="text-orange-700 hover:text-white" href="#"><router-link to="/">HOME</router-link></a></li>
-            <li><a class="text-orange-700 hover:text-white" href="#"><router-link to="/post">POST</router-link></a></li>
-            <li><a class="text-orange-700 hover:text-white"  href="#"><router-link to="/photo">PHOTO</router-link></a></li>
-            <li><a class="text-orange-700 hover:text-white"  href="#"><router-link to="/album">ALBUM</router-link></a></li>
-        </ul>
+                <!-- post 1 -->
+                <div class="rounded w-full  flex flex-col md:flex-row mb-10">
+                    <img src="https://via.placeholder.com/600/771796" class="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0" />
+                    <div class="bg-white rounded px-4">
+                    <div class="md:mt-0 text-gray-800 font-semibold text-xl mb-2">
+                       {{list.title}}
+                    </div>
+  
+                    </div>
+                </div>
+
     </div>
   </div>
 </template>
 
 <script>
+import posts from '../../data/posts'
+
+
 export default {
-  name: "SidebarPost",
-  data() {
-    return {
-      message: "halo",
-    };
+  name: "PostPage",
+  data(){
+      return {
+          list: [],
+      }
   },
   created() {
-    console.log("post detail created");
-    // this.list = users;
-    // console.log("m", { m: this.message, users });
+    console.log("post created");
+    this.list = posts[posts.length-1]
+   
   },
 };
 </script>

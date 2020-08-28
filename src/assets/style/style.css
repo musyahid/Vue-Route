@@ -4,6 +4,8 @@
 
 @import "tailwindcss/utilities";
 
+
+
 .paginate-list {
     width: 159px;
     margin: 0 auto;
@@ -45,4 +47,6 @@
   a {
     color: #c05621;
   }
+
+
   
